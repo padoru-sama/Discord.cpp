@@ -144,11 +144,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="discord.cpp" />
+    <ClCompile Include="event.cpp" />
+    <ClCompile Include="functionChannel.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="discord.h" />
-    <ClInclude Include="Include.h" />
+    <ClInclude Include="include.h" />
+    <ClInclude Include="Struct\Channel\allowedMentionsObject.h" />
+    <ClInclude Include="Struct\Channel\channelObject.h" />
+    <ClInclude Include="Struct\Channel\embedObject.h" />
+    <ClInclude Include="Struct\Channel\messageObject.h" />
+    <ClInclude Include="Struct\Gateway\activityObject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

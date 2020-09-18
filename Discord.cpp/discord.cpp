@@ -1,6 +1,6 @@
 #include "discord.h"
 
-Client::Client()
+Discord::Discord()
 {
 
 	// affichage du msg websocket ressu + heartbeat
@@ -16,7 +16,7 @@ Client::Client()
 			std::wcout << "on a recu un event" << '\n';
 			if (data[L"t"].as_string() == L"MESSAGE_CREATE")
 			{
-																											std::wcout << data[L"d"].as_object()[L"author"].as_object()[L"username"].as_string() << " a dit " << data[L"d"].as_object()[L"content"].as_string() << "\n\n";
+																											std::wcout << data[L"d"].as_object()[L"author"].as_object()[L"username"].as_string() << " a dit " << data[L"d"].as_object()[L"content"].as_string() << " dans le salon " << data[L"d"].as_object()[L"guild_id"].as_string() << "\n\n";
 				std::wstring msg = data[L"d"].as_object()[L"content"].as_string();
 				onMessage(msg);
 			}
@@ -47,35 +47,31 @@ Client::Client()
 	});
 }
 
-Client::~Client()
+Discord::~Discord()
 {
 	wssClient.close().wait();
 }
 
-std::wstring Client::requestHttp(const method method, const std::wstring& link)
+std::wstring Discord::requestHttp(const method method, const std::wstring& link, const json::value& params)
 {
-
-	static http_client httpClient(L"http://discord.com/api");
+	static http_client httpClient(L"https://discord.com/api");
 	http_request req(method);
 	req.set_request_uri(link);
+	req.headers().add(L"Content-Type", L"application/json");
 	req.headers().add(L"Authorization", L"Bot " + token);
-
+	req.set_body(params);
 	std::wstring response;
-	httpClient.request(req).then([&](http_response msg)
+	httpClient.request(req).then([&response](http_response msg)
 	{
 		response = msg.extract_string().get();
 	}).wait();
-
 	return response;
-
-
 }
 
 
 
 
-
-void Client::run(std::wstring arg)
+void Discord::run(std::wstring arg)
 {
 	token = arg;
 

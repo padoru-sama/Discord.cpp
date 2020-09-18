@@ -17,8 +17,9 @@
 #include <chrono>
 
 //struct
-#include "Struct/activity.h"
-
+#include "Struct/Gateway/activityObject.h"
+/*#include "Struct/Channel/allowedMentionsObject.h"
+#include "Struct/Channel/embedObject.h"*/
 
 
 using namespace std::chrono;

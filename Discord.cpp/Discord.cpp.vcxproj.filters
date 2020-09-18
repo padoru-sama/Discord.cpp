@@ -13,6 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\Struct">
+      <UniqueIdentifier>{7b6024e7-7aed-46ae-b598-8ff06da871c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Struct\Channel">
+      <UniqueIdentifier>{4153a2f0-104c-44be-9c42-4143350c1abb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Struct\GateWay">
+      <UniqueIdentifier>{6513d316-7bdc-4887-9c5a-ea84e58b2354}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -21,13 +30,34 @@
     <ClCompile Include="discord.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="event.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="functionChannel.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Include.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="discord.h">
       <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Struct\Channel\allowedMentionsObject.h">
+      <Filter>Fichiers d%27en-tête\Struct\Channel</Filter>
+    </ClInclude>
+    <ClInclude Include="Struct\Channel\channelObject.h">
+      <Filter>Fichiers d%27en-tête\Struct\Channel</Filter>
+    </ClInclude>
+    <ClInclude Include="Struct\Channel\embedObject.h">
+      <Filter>Fichiers d%27en-tête\Struct\Channel</Filter>
+    </ClInclude>
+    <ClInclude Include="Struct\Channel\messageObject.h">
+      <Filter>Fichiers d%27en-tête\Struct\Channel</Filter>
+    </ClInclude>
+    <ClInclude Include="include.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Struct\Gateway\activityObject.h">
+      <Filter>Fichiers d%27en-tête\Struct\GateWay</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
